@@ -2,8 +2,8 @@
 
 Sistema para teste pratico pwr saúde.
 
-- [Sistema de cadastro de usuários
-- [Sistema de login de usuários
+- Sistema de cadastro de usuários
+- Sistema de login de usuários
 - Sistema de Editar perfil usuários
 - Sistema interagindo com API stipe de pagamentos
 - Database de Usuários criada
