@@ -1,5 +1,12 @@
 ## Sobre o sistema
+Pre requisitos - 
+Laravel 9
+Node.js
 
+Utilizado 
+- Laravel : https://laravel.com/docs/9.x/readme
+- Sneat : https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/
+- Stripe : https://laravel.com/docs/9.x/billing
 Sistema para teste pratico pwr saúde.
 
 - Sistema de cadastro de usuários
