@@ -22,4 +22,4 @@ Use o seguinte comando para instalar o composer :: composer install
 
 5 Passo - Crie um banco de dados e altere os dados no arquivo .env no diretorio raiz, execute o comando :: php artisan migrate
 
-5 Passo - Para executar o aplicativo, você precisa executar o seguinte comando no diretório do projeto :: php artisan serve
+6 Passo - Para executar o aplicativo, você precisa executar o seguinte comando no diretório do projeto :: php artisan serve
