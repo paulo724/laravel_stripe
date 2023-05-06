@@ -5,7 +5,7 @@ $navbarHideToggle = false;
 
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'dashboard')
+@section('title', 'Without menu - Layouts')
 
 @section('content')
 
@@ -22,7 +22,7 @@ $navbarHideToggle = false;
                         <p class="mb-4">Finalize seu cadastro e desfrute de todos nosso serviços, <span class="fw-bold"> acesse seu perfil clicando no botão abaixo</span></p>
                         <a href="/profile" class="btn btn-sm btn-outline-primary">Concluir cadastro</a>
                         @else
-                        <p class="mb-4">Temos um desconto de <span class="fw-bold">72%</span> especialmente para você.</p>
+                        <p class="mb-4">Temos um desconto <span class="fw-bold">preparado</span> especialmente para você.</p>
                         @endif
                     </div>
                 </div>
@@ -43,27 +43,20 @@ $navbarHideToggle = false;
     <div class="col-12 col-lg-12 order-2 order-md-3 order-lg-2 mb-4">
 
         <div class="card h-100">
+
+
             <div class="card-header d-flex align-items-center justify-content-between pb-0">
                 <div class="card-title mb-0">
-                    <h5 class="m-0 me-2">Informações sobre o seu plano</h5>
-                    <small class="text-muted">Informações sobre o plano assinado</small>
+                    <h5 class="m-0 me-2">Conheça nossos serviços</h5>
+                    <small class="text-muted">Informações sobre os planos disponiveis</small>
                 </div>
             </div>
+            @foreach($plans as $plan)
             <div class="card-body">
-                @if(empty($dataPlan))
-                <div class="alert alert-primary d-flex" role="alert">
-                    <span class="badge badge-center rounded-pill bg-primary border-label-primary p-3 me-2"><i class="bx bx-command fs-6"></i></span>
-                    <div class="d-flex flex-column ps-1">
-                        <h6 class="alert-heading d-flex align-items-center fw-bold mb-1">Você ainda não tem planos contratados</h6>
-                        <span><a href="/plans" class="btn btn-sm btn-primary">Conhecer planos</a></span>
-                    </div>
-                </div>
-                @else
-
                 <div class="d-flex justify-content-between align-items-center mb-3">
                     <div class="d-flex flex-column align-items-center gap-1">
-                        <h2 class="mb-2">{{$dataPlan['name']}}</h2>
-                        <span>Informações</span>
+                        <h2 class="mb-2">{{ $plan->name }}</h2>
+                        <span>Beneficios</span>
                     </div>
                     <div id="orderStatisticsChart"></div>
                 </div>
@@ -107,14 +100,18 @@ $navbarHideToggle = false;
                         </div>
                         <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
                             <div class="me-2">
-                                <h6 class="mb-0">R$ {{$dataPlan['price']}}</h6>
+                                <h6 class="mb-0">R$ {{ $plan->price }}</h6>
                                 <small class="text-muted">Assinatura válida por 30 dias</small>
                             </div>
                         </div>
                     </li>
+                    <li class="d-flex">
+
+                    </li>
                 </ul>
-                @endif
             </div>
+            <a href="{{ route('plans.show', $plan->slug) }}" class="btn btn-primary btn-block shadow rounded-pill">Contratar Plano</a>
+            @endforeach
         </div>
     </div>
 

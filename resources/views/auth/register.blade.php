@@ -24,7 +24,7 @@
                         </a>
                     </div>
                     <!-- /Logo -->
-                    <x-validation-errors class="mb-4" />
+
                     <h4 class="mb-2">O melhor está por vim 🚀</h4>
 
                     <form id="formAuthentication" class="mb-3" action="{{ route('register') }}" method="POST">

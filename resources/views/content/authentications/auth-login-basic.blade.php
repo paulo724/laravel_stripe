@@ -24,7 +24,7 @@
           <!-- /Logo -->
           <h4 class="mb-2">Bem vindo {{config('variables.templateName')}}! 👋</h4>
           <p class="mb-4">Por favor, entre na sua conta e comece a aventura</p>
-          <x-input-error :messages="$errors->get('email')" class="mt-2" />
+
           <form method="POST" action="{{ route('login') }}">
             @csrf
             <div class="mb-3">

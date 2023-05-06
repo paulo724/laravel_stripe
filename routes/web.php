@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\PlanController;
+use App\Http\Controllers\SubscriptionController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -28,12 +29,11 @@ Route::get('/home', $controller_path . '\layouts\WithoutMenu@index')->name('layo
 
 //account
 Route::get('/account', $controller_path . '\pages\AccountSettings@index')->name('page-account');
-// plans 
-Route::get('/plans', $controller_path . '\plans\plans@index')->name('plans');
 
+/*
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');*/
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -41,6 +41,13 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
+
+Route::middleware("auth")->group(function () {
+    Route::get('plans', [PlanController::class, 'index']);
+    Route::get('plans/{plan}', [PlanController::class, 'show'])->name("plans.show");
+    Route::post('subscription', [PlanController::class, 'subscription'])->name("subscription.create");
+    Route::get('dashboard', [SubscriptionController::class, 'showPlan'])->name("dashboard");
+});
 
 Route::get('/payment', 'PaymentController@index');
 Route::post('/charge', 'PaymentController@charge');
