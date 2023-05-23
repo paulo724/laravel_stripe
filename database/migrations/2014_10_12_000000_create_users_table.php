@@ -19,9 +19,9 @@ return new class extends Migration
             $table->string('password');
             $table->string('cpf')->nullable();
             $table->date('birthDate')->nullable();
-            $table->string('number')->nullable();
+            $table->string('numberPhone')->nullable();
             $table->string('zipCode')->nullable();
-            $table->string('adress')->nullable();
+            $table->string('address')->nullable();
             $table->string('state')->nullable();
             $table->string('city')->nullable();
             $table->rememberToken();
