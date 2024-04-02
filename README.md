@@ -7,8 +7,7 @@ Utilizado
 - Laravel : https://laravel.com/docs/9.x/readme
 - Sneat : https://demos.themeselection.com/sneat-bootstrap-html-admin-template/documentation/
 - Stripe : https://laravel.com/docs/9.x/billing
-Sistema para teste pratico pwr saúde.
-
+Sistema Integração Stripe
 - Sistema de cadastro de usuários
 - Sistema de login de usuários
 - Sistema de Editar perfil usuários
